@@ -1,7 +1,9 @@
+import TodoContainer from "./components/TodoContainer";
+
 const App = () => {
   return (
     <div>
-      <h1>Todo App</h1>
+      <TodoContainer />
     </div>
   );
 };
