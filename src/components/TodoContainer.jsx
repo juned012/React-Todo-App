@@ -1,7 +1,13 @@
-import React from "react";
+import Card from "./Card";
 
 const TodoContainer = () => {
-  return <div>TodoContainer</div>;
+  return (
+    <div>
+      <div>
+        <Card />
+      </div>
+    </div>
+  );
 };
 
 export default TodoContainer;
