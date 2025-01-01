@@ -1,5 +1,6 @@
 import Header from "./Header";
 import NavBar from "./NavBar";
+import CardListing from "./CardListing";
 
 const TodoContainer = () => {
   return (
@@ -7,6 +8,7 @@ const TodoContainer = () => {
       <div>
         <Header />
         <NavBar />
+        <CardListing />
       </div>
     </div>
   );
