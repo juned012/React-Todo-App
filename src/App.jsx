@@ -4,7 +4,7 @@ const App = () => {
   return (
     <div className="bg-slate-200 min-h-screen">
       <TodoContainer />
-    </div>
+    </div>  
   );
 };
 
