@@ -5,7 +5,7 @@ import { IoIosTimer } from "react-icons/io";
 const NavBar = () => {
   return (
     <div className="pt-2 pb-8">
-      <div className="flex gap-5">
+      <div className="flex md:gap-5 gap-3">
         <div className="relative cursor-pointer text-gray-800 font-semibold group">
           <p className="flex items-center gap-1">
             <GoTasklist />
