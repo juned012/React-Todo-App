@@ -1,12 +1,12 @@
-import Card from "./Card";
 import Header from "./Header";
+import NavBar from "./NavBar";
 
 const TodoContainer = () => {
   return (
     <div className="max-w-screen-xl m-auto">
       <div>
         <Header />
-        <Card />
+        <NavBar />
       </div>
     </div>
   );
