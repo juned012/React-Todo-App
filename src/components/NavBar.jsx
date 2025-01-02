@@ -20,7 +20,7 @@ const NavBar = () => {
 
   const underlineStyles = (path) => {
     return `absolute bottom-[-4px] left-0 w-full h-0.5 bg-green-600 ${
-      location.pathname === path ? "scale-x-100" : "scale-x-0 "
+      location.pathname === path ? "scale-x-100" : "scale-x-0"
     } transform 
           group-hover:scale-x-100 transition-transform duration-300`;
   };
@@ -32,7 +32,7 @@ const NavBar = () => {
           <div className={linkStyles("/")}>
             <p className="flex items-center gap-1">
               <GoTasklist />
-              <span>All Tasks</span>
+              <span className="text-sm">All Tasks</span>
             </p>
             <span className={underlineStyles("/")}></span>
           </div>
@@ -42,18 +42,17 @@ const NavBar = () => {
           <div className={linkStyles("/recent")}>
             <p className="flex items-center gap-1">
               <IoIosTimer />
-              <span>Recently Added</span>
+              <span className="text-sm">Recently Added</span>
             </p>
             <span className={underlineStyles("/recent")}></span>
           </div>
         </Link>
-        <Link to={"/completed"}>
-          <div className="relative cursor-pointer text-gray-800 group">
+        <Link to={"/completed"} onClick={() => setActiveLink("/completed")}>
+          <div className={linkStyles("/completed")}>
             <p className="flex items-center gap-1">
               <MdTaskAlt />
-              <span>Completed</span>
+              <span className="text-sm">Completed</span>
             </p>
-
             <span className={underlineStyles("/completed")}></span>
           </div>
         </Link>

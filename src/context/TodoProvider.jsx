@@ -1,7 +1,16 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const TodoContext = createContext();
 
 export const TodoProvider = ({ children }) => {
-  return <TodoContext.Provider>{children}</TodoContext.Provider>;
+  const [todoData, setTodoData] = useState([]);
+
+  const addToTask = (task) => {
+    setTodoData([...task, todoData]);
+  };
+  return (
+    <TodoContext.Provider value={(todoData, addToTask)}>
+      {children}
+    </TodoContext.Provider>
+  );
 };
