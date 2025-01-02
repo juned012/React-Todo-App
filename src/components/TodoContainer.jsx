@@ -1,6 +1,5 @@
 import Header from "./Header";
 import NavBar from "./NavBar";
-import CardListing from "./CardListing";
 
 const TodoContainer = () => {
   return (
@@ -8,7 +7,6 @@ const TodoContainer = () => {
       <div className="flex flex-col gap-2">
         <Header />
         <NavBar />
-        <CardListing />
       </div>
     </div>
   );

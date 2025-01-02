@@ -1,6 +1,6 @@
 const Card = () => {
   return (
-    <div className="shadow-md bg-white p-4 rounded-xl cursor-pointer">
+    <div className="shadow-md border border-gray-100 bg-white p-4 rounded-xl cursor-pointer">
       <div>
         <h1 className="text-xl font-semibold pb-2">
           Lorem ipsum dolor sit amet.

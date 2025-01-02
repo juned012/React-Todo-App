@@ -13,7 +13,7 @@ const NavBar = () => {
           </p>
           <span
             className="absolute bottom-[-4px] left-0 w-full h-0.5 bg-green-600 transform 
-    scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+        scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
           ></span>
         </div>
 
