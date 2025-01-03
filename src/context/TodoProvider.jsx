@@ -6,10 +6,11 @@ export const TodoProvider = ({ children }) => {
   const [todoData, setTodoData] = useState([]);
 
   const addToTask = (task) => {
-    setTodoData([...task, todoData]);
+    setTodoData([...todoData, task]);
   };
+
   return (
-    <TodoContext.Provider value={(todoData, addToTask)}>
+    <TodoContext.Provider value={{ todoData, addToTask }}>
       {children}
     </TodoContext.Provider>
   );

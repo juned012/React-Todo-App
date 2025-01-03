@@ -1,12 +1,25 @@
 import { MdClose } from "react-icons/md";
 import { IoCreateOutline } from "react-icons/io5";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { TodoContext } from "../context/TodoProvider";
 
 const TodoEditor = ({ setIsOpenEditor }) => {
   const [todos, setTodos] = useState({
     title: "",
     description: "",
   });
+
+  const { addToTask } = useContext(TodoContext);
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setTodos({ ...todos, [id]: value });
+  };
+
+  const handleCreateTask = () => {
+    addToTask(todos);
+    setIsOpenEditor(false);
+  };
 
   return (
     <div className="bg-black fixed z-50 flex justify-center items-center bg-opacity-50 inset-0">
@@ -28,6 +41,8 @@ const TodoEditor = ({ setIsOpenEditor }) => {
               Your Title:
             </label>
             <input
+              value={todos.title}
+              onChange={handleInputChange}
               type="text"
               id="title"
               placeholder="Enter title"
@@ -39,6 +54,8 @@ const TodoEditor = ({ setIsOpenEditor }) => {
               Your Description:
             </label>
             <input
+              value={todos.description}
+              onChange={handleInputChange}
               type="text"
               id="description"
               placeholder="Enter description"
@@ -49,7 +66,10 @@ const TodoEditor = ({ setIsOpenEditor }) => {
             <button className="p-2 md:p-3 bg-red-600 hover:bg-red-700 transform transition-colors duration-100 text-white rounded-md">
               Save as Draft
             </button>
-            <button className="p-2 md:p-3 bg-green-600 hover:bg-green-700 transform transition-colors duration-100 text-white rounded-md">
+            <button
+              onClick={handleCreateTask}
+              className="p-2 md:p-3 bg-green-600 hover:bg-green-700 transform transition-colors duration-100 text-white rounded-md"
+            >
               Create Task
             </button>
           </div>
